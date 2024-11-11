@@ -18,6 +18,7 @@ public class ViewFactory {
     // Dashboard view instance
     private AnchorPane dashboardView;
     private AnchorPane TransactionView;
+    private AnchorPane AccountsView;
 
     // Constructor
 //    public ViewFactory(StringProperty clientSelectedMenuItem) {
@@ -27,6 +28,7 @@ public class ViewFactory {
         this.clientSelectedMenuItem = new SimpleStringProperty();
     }
 
+//    client view section
     public StringProperty getClientSelectedMenuItem() {
         return clientSelectedMenuItem;
     }
@@ -54,6 +56,17 @@ public class ViewFactory {
             }
         }
         return TransactionView;
+    }
+
+    public AnchorPane getAccountsView() {
+        if (AccountsView == null) {
+            try{
+                AccountsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Accounts.fxml")).load();
+            }catch (Exception e){
+                logger.log(Level.SEVERE, "Error loading Account view", e);
+            }
+        }
+        return AccountsView;
     }
 
     // Method to show the Login window

@@ -1,0 +1,64 @@
+.account_view_container {
+    -fx-background-color: rgba(197, 197, 197, 0.85);
+}
+
+.account_view_container Text{
+    -fx-fill: #5d5b5b;
+    -fx-font-size: 1.3em;
+    -fx-font-family: "Segoe UI";
+}
+
+.account_view_container VBox {
+    -fx-border-width: 0 0 0 1;
+    -fx-border-color: #888888;
+    -fx-padding: 10;
+    -fx-spacing: 15;
+}
+
+.account_view_container VBox Text {
+    -fx-font-size: 1.2em;
+}
+
+.account_view_container VBox Label {
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+}
+
+.account_view_container TextField {
+    -fx-border-radius: 5px;
+    -fx-pref-width: 240;
+    -fx-pref-height: 35;
+    -fx-background-color: #FFF;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3,0,0,3);
+}
+
+.account_view_container Button{
+    -fx-background-color: linear-gradient(to right, #132A13, #253F25);
+    -fx-pref-width: 240;
+    -fx-font-size: 1.2em;
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.account_view_container Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #003161;
+}
+
+.account_view_container TextField:hover{
+    -fx-border-width: 2px;
+    -fx-border-color: #003161;
+    -fx-border-radius: 5px;
+    -fx-text-fill: black;
+}
+.heading_container {
+    -fx-font-size: 1.3em;
+    -fx-font-weight: bold;
+}
+
+.heading_transfer_container {
+    -fx-font-size: 1.3em;
+    -fx-font-weight: bold;
+    -fx-fill: #132A13;
+}
