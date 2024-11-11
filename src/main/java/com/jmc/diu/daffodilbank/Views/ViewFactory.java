@@ -1,8 +1,9 @@
 package com.jmc.diu.daffodilbank.Views;
 
+import com.jmc.diu.daffodilbank.Controllers.Admin.AdminController;
 import com.jmc.diu.daffodilbank.Controllers.Client.ClientController;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -11,36 +12,46 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ViewFactory {
+    private AccountType loginAccountType;
     // Logger instance
     private static final Logger logger = Logger.getLogger(ViewFactory.class.getName());
-    private final StringProperty clientSelectedMenuItem;
-
-    // Dashboard view instance
+    private final ObjectProperty<ClientMenuOptions> clientSelectedMenuItem;
     private AnchorPane dashboardView;
-    private AnchorPane TransactionView;
-    private AnchorPane AccountsView;
+    private AnchorPane transactionsView;
+    private AnchorPane accountsView;
 
-    // Constructor
-//    public ViewFactory(StringProperty clientSelectedMenuItem) {
-//        this.clientSelectedMenuItem = clientSelectedMenuItem;
-//    }
+    /*Admin section*/
+    private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
+    private AnchorPane createClientView;
+
     public ViewFactory() {
-        this.clientSelectedMenuItem = new SimpleStringProperty();
+        this.loginAccountType = AccountType.CLIENT;
+        this.clientSelectedMenuItem = new SimpleObjectProperty<>();
+        this.adminSelectedMenuItem = new SimpleObjectProperty<>();
     }
 
-//    client view section
-    public StringProperty getClientSelectedMenuItem() {
+    //seter
+    public void setLoginAccountType(AccountType loginAccountType) {
+        this.loginAccountType = loginAccountType;
+    }
+
+    //geter
+    public AccountType getLoginAccountType() {
+        return loginAccountType;
+    }
+
+
+    /*----------------------------------client view-----------------------------*/
+
+    public ObjectProperty<ClientMenuOptions> getClientSelectedMenuItem() {
         return clientSelectedMenuItem;
     }
 
-    // Method to get the Dashboard view
     public AnchorPane getDashboardView() {
         if (dashboardView == null) {
             try {
-                // Load the Dashboard view from FXML
                 dashboardView = new FXMLLoader(getClass().getResource("/Fxml/Client/Dashboard.fxml")).load();
             } catch (Exception e) {
-                // Log the error using Logger
                 logger.log(Level.SEVERE, "Error loading Dashboard view", e);
             }
         }
@@ -48,60 +59,82 @@ public class ViewFactory {
     }
 
     public AnchorPane getTransactionView() {
-        if (TransactionView == null) {
+        if (transactionsView == null) {
             try{
-                TransactionView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transcations.fxml")).load();
+                transactionsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transcations.fxml")).load();
             }catch (Exception e){
                 logger.log(Level.SEVERE, "Error loading Transaction view", e);
             }
         }
-        return TransactionView;
+        return transactionsView;
     }
 
     public AnchorPane getAccountsView() {
-        if (AccountsView == null) {
+        if (accountsView == null) {
             try{
-                AccountsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Accounts.fxml")).load();
+                accountsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Accounts.fxml")).load();
             }catch (Exception e){
                 logger.log(Level.SEVERE, "Error loading Account view", e);
             }
         }
-        return AccountsView;
+        return accountsView;
     }
 
-    // Method to show the Login window
+    public void showClientWindow() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Client.fxml"));
+        ClientController clientController = new ClientController();
+        loader.setController(clientController);
+        createStage(loader);
+    }
+
+
+
+
+    /*-------------------------admin view section--------------------------*/
+
+    public AnchorPane getCreateClientView() {
+        if (createClientView == null) {
+            try{
+                createClientView = new FXMLLoader(getClass().getResource("/Fxml/Admin/CreateClient")).load();
+            }catch (Exception e){
+                logger.log(Level.SEVERE, "Error loading Client view", e);
+            }
+        }
+        return createClientView;
+    }
+
+
+    public ObjectProperty<AdminMenuOptions> getAdminSelectedMenuItem() {
+        return adminSelectedMenuItem;
+    }
+
+    public void showAdminWindow() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Admin/Admin.fxml"));
+        AdminController controller = new AdminController();
+        loader.setController(controller);
+        createStage(loader);
+    }
+
     public void showLoginWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
         createStage(loader);
     }
 
-    // Private method to create a new Stage
     private void createStage(FXMLLoader loader) {
         Scene scene = null;
         try {
-            // Load the scene from FXML
             scene = new Scene(loader.load());
         } catch (Exception e) {
-            // Log the error using Logger
             logger.log(Level.SEVERE, "Error creating stage", e);
         }
-
-        // Create a new Stage and set the scene
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Daffodil Bank");
         stage.show();
     }
 
-    // Method to show the Client window
-    public void showClientWindow() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Client.fxml"));
-
-        // Set the controller for the Client window
-        ClientController clientController = new ClientController();
-        loader.setController(clientController);
-
-        // Create the stage for the Client window
-        createStage(loader);
+    public void closeStage(Stage stage) {
+        stage.close();
     }
+
 }
