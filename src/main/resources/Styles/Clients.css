@@ -1,0 +1,19 @@
+.clients_container {
+    -fx-background-color: #EEE;
+}
+
+.clients_container Text {
+    -fx-fill: #555555;
+    -fx-font-size: 1.8em;
+    -fx-font-family: "Courier New", Courier, monospace;
+}
+
+.clients_container .list-view {
+    -fx-background-color: #EEE;
+    -fx-border-width: 0;
+}
+
+.clients_container .list-cell {
+    -fx-background-color: #EEE;
+    -fx-padding: 10 0 10 0;
+}

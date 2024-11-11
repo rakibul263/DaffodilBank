@@ -14,7 +14,7 @@
     </VBox>
     <VBox layoutX="427.0" layoutY="123.0" prefHeight="350.0" prefWidth="350.0" styleClass="login_form_container" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
         <Label text="Choose Your Account Type: " />
-        <ChoiceBox id="choice-box-popup-menu" fx:id="choicebox_lbl" prefWidth="150.0" />
+        <ChoiceBox id="choice-box-popup-menu" fx:id="choicebox_lbl" prefWidth="90.0" />
         <Text fx:id="account_number_lbl" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Number:" />
         <TextField fx:id="account_number_fld" styleClass="input_field" />
         <Text fx:id="password_lbl" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />

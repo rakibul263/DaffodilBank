@@ -13,16 +13,16 @@ import java.util.logging.Logger;
 
 public class ViewFactory {
     private AccountType loginAccountType;
-    // Logger instance
     private static final Logger logger = Logger.getLogger(ViewFactory.class.getName());
     private final ObjectProperty<ClientMenuOptions> clientSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
     private AnchorPane accountsView;
 
-    /*Admin section*/
+    /* Admin section */
     private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
     private AnchorPane createClientView;
+    private AnchorPane clientsView;
 
     public ViewFactory() {
         this.loginAccountType = AccountType.CLIENT;
@@ -30,19 +30,17 @@ public class ViewFactory {
         this.adminSelectedMenuItem = new SimpleObjectProperty<>();
     }
 
-    //seter
+    // Setter for loginAccountType
     public void setLoginAccountType(AccountType loginAccountType) {
         this.loginAccountType = loginAccountType;
     }
 
-    //geter
+    // Getter for loginAccountType
     public AccountType getLoginAccountType() {
         return loginAccountType;
     }
 
-
-    /*----------------------------------client view-----------------------------*/
-
+    /* Client views */
     public ObjectProperty<ClientMenuOptions> getClientSelectedMenuItem() {
         return clientSelectedMenuItem;
     }
@@ -60,9 +58,9 @@ public class ViewFactory {
 
     public AnchorPane getTransactionView() {
         if (transactionsView == null) {
-            try{
-                transactionsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transcations.fxml")).load();
-            }catch (Exception e){
+            try {
+                transactionsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transactions.fxml")).load();
+            } catch (Exception e) {
                 logger.log(Level.SEVERE, "Error loading Transaction view", e);
             }
         }
@@ -71,15 +69,14 @@ public class ViewFactory {
 
     public AnchorPane getAccountsView() {
         if (accountsView == null) {
-            try{
+            try {
                 accountsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Accounts.fxml")).load();
-            }catch (Exception e){
+            } catch (Exception e) {
                 logger.log(Level.SEVERE, "Error loading Account view", e);
             }
         }
         return accountsView;
     }
-
 
     public void showClientWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Client.fxml"));
@@ -88,22 +85,28 @@ public class ViewFactory {
         createStage(loader);
     }
 
-
-
-
-    /*-------------------------admin view section--------------------------*/
-
+    /* Admin views */
     public AnchorPane getCreateClientView() {
         if (createClientView == null) {
-            try{
-                createClientView = new FXMLLoader(getClass().getResource("/Fxml/Admin/CreateClient")).load();
-            }catch (Exception e){
-                logger.log(Level.SEVERE, "Error loading Client view", e);
+            try {
+                createClientView = new FXMLLoader(getClass().getResource("/Fxml/Admin/CreateClient.fxml")).load();
+            } catch (Exception e) {
+                logger.log(Level.SEVERE, "Error loading Create Client view", e);
             }
         }
         return createClientView;
     }
 
+    public AnchorPane getClientsView() {
+        if (clientsView == null) {
+            try {
+                clientsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Clients.fxml")).load();
+            } catch (Exception e) {
+                logger.log(Level.SEVERE, "Error loading Clients view", e);
+            }
+        }
+        return clientsView;
+    }
 
     public ObjectProperty<AdminMenuOptions> getAdminSelectedMenuItem() {
         return adminSelectedMenuItem;
@@ -137,5 +140,4 @@ public class ViewFactory {
     public void closeStage(Stage stage) {
         stage.close();
     }
-
 }
