@@ -1,6 +1,8 @@
 package com.jmc.diu.daffodilbank.Views;
 
 import com.jmc.diu.daffodilbank.Controllers.Client.ClientController;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -11,12 +13,23 @@ import java.util.logging.Logger;
 public class ViewFactory {
     // Logger instance
     private static final Logger logger = Logger.getLogger(ViewFactory.class.getName());
+    private final StringProperty clientSelectedMenuItem;
 
     // Dashboard view instance
     private AnchorPane dashboardView;
+    private AnchorPane TransactionView;
 
     // Constructor
-    public ViewFactory() {}
+//    public ViewFactory(StringProperty clientSelectedMenuItem) {
+//        this.clientSelectedMenuItem = clientSelectedMenuItem;
+//    }
+    public ViewFactory() {
+        this.clientSelectedMenuItem = new SimpleStringProperty();
+    }
+
+    public StringProperty getClientSelectedMenuItem() {
+        return clientSelectedMenuItem;
+    }
 
     // Method to get the Dashboard view
     public AnchorPane getDashboardView() {
@@ -30,6 +43,17 @@ public class ViewFactory {
             }
         }
         return dashboardView;
+    }
+
+    public AnchorPane getTransactionView() {
+        if (TransactionView == null) {
+            try{
+                TransactionView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transcations.fxml")).load();
+            }catch (Exception e){
+                logger.log(Level.SEVERE, "Error loading Transaction view", e);
+            }
+        }
+        return TransactionView;
     }
 
     // Method to show the Login window

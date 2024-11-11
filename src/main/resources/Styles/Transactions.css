@@ -1,0 +1,20 @@
+.transactions_container {
+    -fx-background-color: #e3e3e3;
+}
+
+.transactions_container Text{
+    -fx-text-fill: black;
+    -fx-font-size: 2.5em;
+    -fx-font-family: "Calibri Light";
+}
+
+.transactions_container list-view{
+    -fx-background-color: #EEE;
+    -fx-padding: 10;
+}
+
+.transactions_container List-cell{
+    -fx-background-color: #EEE;
+    -fx-pref-width: 800px;
+    -fx-font-weight: bold;
+}
