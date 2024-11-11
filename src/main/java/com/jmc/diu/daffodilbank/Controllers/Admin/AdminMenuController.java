@@ -4,7 +4,6 @@ import com.jmc.diu.daffodilbank.Models.Model;
 import com.jmc.diu.daffodilbank.Views.AdminMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -25,4 +24,4 @@ public class AdminMenuController implements Initializable {
         //4:40
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.CREATE_CLIENT);
     }
-}
+} 

@@ -80,6 +80,7 @@ public class ViewFactory {
         return accountsView;
     }
 
+
     public void showClientWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Client.fxml"));
         ClientController clientController = new ClientController();
