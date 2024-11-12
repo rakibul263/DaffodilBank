@@ -5,30 +5,25 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/Deposit.css"
-            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.jmc.diu.daffodilbank.Controllers.Admin.DepositController">
-   <VBox layoutX="113.0" layoutY="174.0" prefHeight="570.0" prefWidth="820.0" AnchorPane.leftAnchor="15.0"
-         AnchorPane.topAnchor="100.0">
+<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/Deposit.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jmc.diu.daffodilbank.Controllers.Admin.DepositController">
+   <VBox layoutX="113.0" layoutY="174.0" prefHeight="570.0" prefWidth="820.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="100.0">
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="820.0" styleClass="search_box">
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="TextField_container"
-               text="Search By Payee Address"/>
-         <TextField fx:id="payee_address_fld"/>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="TextField_container" text="Search By Payee Address" />
+         <TextField fx:id="payee_address_fld" />
          <Button fx:id="payee_address_btn" mnemonicParsing="false" text="Button">
             <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="20"/>
+               <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="20" />
             </graphic>
          </Button>
       </HBox>
-      <ListView fx:id="list_view_payee" prefHeight="200.0" prefWidth="820.0" styleClass="result_box"/>
+      <ListView fx:id="list_view_payee" prefHeight="200.0" prefWidth="820.0" styleClass="result_box" />
       <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="315.0" prefWidth="100.0" styleClass="search_box">
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="TextField_container" text="Deposit Section"/>
-         <Text layoutX="377.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount"/>
-         <TextField fx:id="Ammount_fld" prefHeight="41.0" prefWidth="199.0"/>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="TextField_container" text="Deposit Section" />
+         <Text layoutX="377.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" />
+         <TextField fx:id="Ammount_fld" prefHeight="41.0" prefWidth="199.0" />
          <Button fx:id="deposite_btn" mnemonicParsing="false" prefHeight="37.0" prefWidth="177.0" text="Button">
             <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="20"/>
+               <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="20" />
             </graphic>
          </Button>
       </VBox>

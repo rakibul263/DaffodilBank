@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+
+<AnchorPane prefHeight="60.0" prefWidth="550.0" stylesheets="@../../Styles/TransactionCell.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.jmc.diu.daffodilbank.Controllers.Client.TransactionCellController">
+   <VBox layoutX="7.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" styleClass="trans_icon_container"
+         AnchorPane.bottomAnchor="4.55" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="5.0">
+      <FontAwesomeIconView fx:id="in_icon" glyphName="LONG_ARROW_RIGHT" size="17" tabSize="15" text=""/>
+      <FontAwesomeIconView fx:id="out_icon" glyphName="LONG_ARROW_LEFT" size="17"/>
+   </VBox>
+   <Label fx:id="tras_date_lbl" layoutX="85.0" layoutY="24.0" styleClass="trans_date_lbl" text="2024-11-12"/>
+   <Label fx:id="sender_lbl" layoutX="209.0" layoutY="24.0" styleClass="trans_pAddress_lbl" text="Shuvo"/>
+   <Line endY="20.0" layoutX="337.0" layoutY="30.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="22.0"/>
+   <Label fx:id="rcvr_lbl" layoutX="351.0" layoutY="24.0" styleClass="trans_pAddress_lbl" text="Tonmoy"/>
+   <Label fx:id="amount_lbl" layoutX="471.0" layoutY="17.0" styleClass="trans_amount_lbl" text=" 200">
+      <graphic>
+         <FontAwesomeIconView glyphName="DOLLAR" size="13"/>
+      </graphic>
+   </Label>
+</AnchorPane>
