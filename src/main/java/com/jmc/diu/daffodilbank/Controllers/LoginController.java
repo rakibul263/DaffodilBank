@@ -28,6 +28,7 @@ public class LoginController implements Initializable {
         choicebox_lbl.setValue(Model.getInstance().getViewFactory().getLoginAccountType());
         choicebox_lbl.valueProperty().addListener(observable -> setAcc_selector() );
         login_btn.setOnAction(event -> onLogin());
+        password_fld.setOnAction(event -> login_btn.fire()); //press enter key to log in
     }
 
     private void onLogin(){
