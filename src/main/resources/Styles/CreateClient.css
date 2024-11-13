@@ -1,51 +1,95 @@
 .create_client_container {
-    -fx-background-color: #EEEEEE;
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 20;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 12, 0, 0, 10);
+    /*-fx-text-fill: #004d4b;*/
 }
 
-.create_client_container Text{
-    -fx-font-size: 1.2em;
-    -fx-fill: #888888;
+.create_client_container Text {
+    -fx-font-size: 1.4em;
+    -fx-fill: #444444;
+    -fx-font-family: "Segoe UI";
 }
 
 .create_client_container VBox {
-    -fx-border-width: 0 0 0 1;
-    -fx-border-color: #000000;
-    -fx-padding: 10;
-    -fx-spacing: 15;
+    -fx-border-width: 0 0 0 2;
+    -fx-border-color: #006644;
+    -fx-padding: 15;
+    -fx-spacing: 18;
 }
 
 .create_client_container TextField {
     -fx-pref-width: 250;
-    -fx-pref-height: 35;
+    -fx-pref-height: 40;
     -fx-background-color: #FFFFFF;
-    -fx-font-size: 1.3em;
-    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3,0,0,3);
+    -fx-background-radius: 12;
+    -fx-font-size: 1.2em;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 8 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 6, 0, 0, 4);
+    -fx-border-width: 2;
+    -fx-border-color: transparent;
 }
 
-.payee_address_lbl{
+.create_client_container TextField:hover {
+    -fx-border-color: #007acc;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 122, 204, 0.3), 5, 0, 0, 5);
+}
+
+.create_client_container TextField:focused {
+    -fx-border-color: #009688;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+}
+
+.payee_address_lbl {
     -fx-pref-width: 250;
-    -fx-pref-height: 30;
+    -fx-pref-height: 35;
     -fx-padding: 5;
-    -fx-background-color: #888;
-    -fx-background-radius: 5;
-    -fx-text-fill: #FFF;
-    -fx-font-size: 1.3em;
-    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3,0,0,3);
+    -fx-background-color: linear-gradient(to right, #4d4d4d, #6f6f6f);
+    -fx-background-radius: 10;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.2em;
+    -fx-font-family: "Segoe UI Bold";
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 4);
 }
 
-.create_client_container Button{
-    -fx-background-color: linear-gradient(to right, #132A13, #253F25);
-    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3,0,0,3);
+.create_client_container Button {
+    -fx-background-color: linear-gradient(to right, #132A13, #1e3c1e);
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0, 0, 6);
     -fx-pref-width: 250;
-    -fx-font-size: 1.5em;
-    -fx-font-family: "Calibri Light";
-    -fx-text-fill: #FFF;
+    -fx-font-size: 1.4em;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 10;
 }
 
-.create_client_container Button:hover{
+.create_client_container Button:hover {
+    -fx-background-color: #004d40;
     -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 12, 0, 0, 8);
 }
 
-.error{
-    -fx-text-fill: red;
+.error {
+    -fx-text-fill: #d32f2f;
+    -fx-font-size: 1.1em;
+    -fx-font-family: "Segoe UI";
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 0, 0, 0.5), 6, 0, 0, 4);
+}
+
+
+.title {
+    -fx-font-size: 2em;
+    -fx-font-family: "Segoe UI Bold";
+    -fx-fill: #004d4b;
+    -fx-text-fill: linear-gradient(to right, #132A13, #1e3c1e);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0, 0, 6);
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;  /* Add padding to ensure the text is inside the box */
+    -fx-background-color: #FFFFFF;  /* Box background color */
+    -fx-background-radius: 10;  /* Rounded corners */
+    -fx-alignment: center;  /* Center the text inside the box */
 }

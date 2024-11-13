@@ -1,112 +1,119 @@
 .main_menu_container {
     -fx-background-color: #EEE;
     -fx-text-alignment: center;
+    -fx-padding: 10;
 }
 
-.left_container{
+.left_container {
     -fx-background-color: #FFF;
     -fx-background-radius: 5;
-    -fx-effect: dropshadow(two-pass-box, #000B58, 5,0,0,4);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 11, 88, 0.2), 10, 0, 0, 4);
     -fx-padding: 0 10 0 10;
 }
 
-/*Title and logo section*/
-.title_container{
-    -fx-background-color: #006A67;
+.title_container {
     -fx-background-radius: 20 20 0 0;
-    -fx-alignment: top_center;
+    -fx-alignment: center; /* Center alignment */
     -fx-padding: 10;
     -fx-font-size: 20;
     -fx-font-weight: bold;
-    -fx-text-fill: white;
-    -fx-font-family: helvetica;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: 'Helvetica';
+    -fx-background-color: linear-gradient(to right, #006A67, #004F4C);
 }
 
-.title_container FontAwesomeIconView{
-    -fx-fill: #132A13;
+.title_container FontAwesomeIconView {
+    -fx-fill: #FFFFFF;
 }
 
-.title_container Text{
-    -fx-fill: #0000000;
+.title_container Text {
+    -fx-fill: #FFFFFF;
     -fx-font-size: 1em;
 }
 
-/*nevagation section*/
-.menu_container{
-    -fx-padding:10 10 10 20;
+.menu_container {
+    -fx-padding: 10 10 10 20;
     -fx-spacing: 20;
 }
 
-.menu_container Button{
+.menu_container Button {
     -fx-pref-width: 115;
     -fx-pref-height: 40;
-    -fx-background-color: #e3e4e7;
+    -fx-background-color: #E3E4E7; /* Soft grey */
     -fx-font-size: 1em;
     -fx-alignment: center_left;
-    -fx-effect: dropshadow(three-pass-box, #000B58, 5,0,0,4);
-    /*-fx-font-weight: bold;*/
+    -fx-text-fill: #333333; /* Dark grey text */
+    -fx-background-radius: 10; /* Rounded corners */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 11, 88, 0.3), 5, 0, 0, 4);
+    -fx-transition: all 0.3s ease; /* Smooth transition */
 }
 
-.menu_container Button:hover{
+.menu_container Button:hover {
     -fx-cursor: hand;
     -fx-border-style: solid;
     -fx-border-width: 1px;
     -fx-border-radius: 10;
-    -fx-background-color: #003161;
-    -fx-text-fill: white;
-}
-
-.menu_container_container Button:hover{
-    -fx-cursor: hand;
+    -fx-background-color: #003161; /* Dark blue */
+    -fx-text-fill: #FFFFFF; /* White text on hover */
+    -fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 5); /* Hover shadow effect */
 }
 
 .menu_container Button FontAwesomeIconView {
-    -fx-fill: #132A13;
+    -fx-fill: #ffffff;
 }
 
 .alt_menu_btn {
     -fx-pref-width: 115;
     -fx-pref-height: 40;
-    -fx-background-color: #132A13;
-    -fx-text-fill: #fff;
+    -fx-background-color: #132A13; /* Dark green */
+    -fx-text-fill: #FFFFFF;
     -fx-font-size: 1em;
     -fx-alignment: center_left;
-    /*-fx-effect: dropshadow(three-pass-box,#FFFFFF);*/
-}
-
-.alt_menu_btn FontAwesomeIconView {
-    -fx-fill: white;
-}
-
-.report_container {
-    -fx-background-color: #eeee;
     -fx-background-radius: 10;
-    -fx-alignment:center ;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 255, 0.2), 5, 0, 0, 4);
+}
+
+.alt_menu_btn:hover {
+    -fx-background-color: #004d4b; /* Slightly darker hover color */
+}
+
+/* Report Container */
+.report_container {
+    -fx-background-color: #EEEEEE; /* Light grey */
+    -fx-background-radius: 10;
+    -fx-alignment: center;
     -fx-spacing: 10;
     -fx-padding: 10 0 10 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 4);
 }
 
 .report_container Text {
-    -fx-font-weight: bolder;
-    -fx-fill: #132a13;
+    -fx-font-weight: bold;
+    -fx-fill: #132A13; /* Dark green */
+    -fx-font-size: 1.2em; /* Slightly larger text */
 }
+
 .report_container Label {
     -fx-text-alignment: center;
     -fx-wrap-text: true;
-    -fx-fill: rgba(19, 42, 19, 0.99);
+    -fx-text-fill: rgba(19, 42, 19, 0.99);
 }
 
 .report_container Button {
     -fx-pref-width: 80;
-    -fx-text-fill: #ffff;
+    -fx-text-fill: #FFFFFF;
     -fx-padding: 6;
-    -fx-background-color: #132a13;
+    -fx-background-color: #132A13;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 4); /* Button shadow effect */
+    -fx-transition: all 0.3s ease; /* Smooth transition */
 }
 
 .report_container Button:hover {
     -fx-cursor: hand;
+    -fx-background-color: #004d4b; /* Darker hover color */
 }
 
 .report_container Button FontAwesomeIconView {
-    -fx-fill: white;
+    -fx-fill: #FFFFFF;
 }
