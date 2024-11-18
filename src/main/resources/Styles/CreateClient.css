@@ -88,8 +88,12 @@
     -fx-text-fill: linear-gradient(to right, #132A13, #1e3c1e);
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0, 0, 6);
     -fx-font-weight: bold;
-    -fx-padding: 10 20;  /* Add padding to ensure the text is inside the box */
-    -fx-background-color: #FFFFFF;  /* Box background color */
-    -fx-background-radius: 10;  /* Rounded corners */
-    -fx-alignment: center;  /* Center the text inside the box */
+    -fx-padding: 10 20;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-alignment: center;
 }
+
+
+
+
