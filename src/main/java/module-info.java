@@ -1,4 +1,4 @@
-module com.jmc.diu.daffodilbank {
+ module com.jmc.diu.daffodilbank {
     requires javafx.controls;
     requires javafx.fxml;
     requires de.jensd.fx.glyphs.fontawesome;

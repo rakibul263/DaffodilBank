@@ -2,7 +2,6 @@ package com.jmc.diu.daffodilbank.Controllers.Client;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
