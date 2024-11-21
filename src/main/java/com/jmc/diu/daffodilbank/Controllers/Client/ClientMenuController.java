@@ -1,8 +1,10 @@
 package com.jmc.diu.daffodilbank.Controllers.Client;
 
 import com.jmc.diu.daffodilbank.Models.Model;
+import com.jmc.diu.daffodilbank.Views.ClientMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,17 +29,29 @@ public class ClientMenuController implements Initializable {
         dashboard_btn.setOnAction(event -> onDashboard());
         transaction_btn.setOnAction(event -> onTransactions());
         accounts_btn.setOnAction(event -> onAccounts());
+        logout_btn.setOnAction(event -> onLogout());
     }
 
     private void onDashboard() {
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Dashboard");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.DASHBOARD);
     }
 
     private void onTransactions() {
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transactions");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.TRANSACTIONS);
     }
 
     private void onAccounts() {
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Accounts");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUNTS);
+    }
+
+    private void onLogout(){
+        //Get Stage
+        Stage stage = (Stage) dashboard_btn.getScene().getWindow();
+        //close the client window
+        Model.getInstance().getViewFactory().closeStage(stage);
+        //show login window
+        Model.getInstance().getViewFactory().showLoginWindow();
+        //login flag false
+        Model.getInstance().setClientLoginSuccessFlag(false);
     }
 }

@@ -6,7 +6,7 @@
 
 
 <AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="transactions_container"
-            stylesheets="@../../Styles/Transactions.css" xmlns="http://javafx.com/javafx/23.0.1"
+            stylesheets="@../../Styles/Transactions.css" xmlns="http://javafx.com/javafx/22.0.1"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.jmc.diu.daffodilbank.Controllers.Client.TransactionsController">
     <Text layoutX="337.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="transactions_container"

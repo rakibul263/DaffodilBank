@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/Dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jmc.diu.daffodilbank.Controllers.Client.DashboardController">
+<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/Dashboard.css" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jmc.diu.daffodilbank.Controllers.Client.DashboardController">
     <Text fx:id="user_name" fill="#115b1d" layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="user_name" text="Hi, Shuvo" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="26.98828125" />
     <Label fx:id="login_date" layoutX="709.0" layoutY="38.0" styleClass="date_lbl" text="Today, 2024-11-11" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="38.0" />
     <Text layoutX="632.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Accounts Summary" AnchorPane.rightAnchor="20.80859375" AnchorPane.topAnchor="79.796875" />

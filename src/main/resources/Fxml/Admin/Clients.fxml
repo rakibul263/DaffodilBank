@@ -6,7 +6,7 @@
 
 
 <AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="clients_container" stylesheets="@../../Styles/Clients.css"
-            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.jmc.diu.daffodilbank.Controllers.Admin.ClientsControllers">
     <Text layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clients :"
           AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0"/>

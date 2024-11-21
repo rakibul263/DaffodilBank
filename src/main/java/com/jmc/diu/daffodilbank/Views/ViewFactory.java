@@ -1,29 +1,46 @@
 package com.jmc.diu.daffodilbank.Views;
 
+import com.jmc.diu.daffodilbank.Controllers.Admin.AdminController;
 import com.jmc.diu.daffodilbank.Controllers.Client.ClientController;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import com.jmc.diu.daffodilbank.Models.Model;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class ViewFactory {
+    private AccountType loginAccountType;
     //client view
-    private final StringProperty clientSelectedMenuItem;
+    private final ObjectProperty<ClientMenuOptions> clientSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
     private AnchorPane accountsView;
 
+    //Admin view
+    private AnchorPane createClientView;
+    private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
+    private AnchorPane clientsView;
+    private AnchorPane depositView;
+
     public ViewFactory(){
-        this.clientSelectedMenuItem = new SimpleStringProperty("");
+        this.loginAccountType = AccountType.CLIENT;
+        this.clientSelectedMenuItem = new SimpleObjectProperty<>();
+        this.adminSelectedMenuItem = new SimpleObjectProperty<>();
     }
 
+    public AccountType getLoginAccountType() {
+        return loginAccountType;
+    }
+
+    public void setLoginAccountType(AccountType loginAccountType) {
+        this.loginAccountType = loginAccountType;
+    }
 
     /*------------------------------Client view section-------------------------------*/
-    public StringProperty getClientSelectedMenuItem() {
+    public ObjectProperty<ClientMenuOptions> getClientSelectedMenuItem() {
         return clientSelectedMenuItem;
     }
 
@@ -60,16 +77,62 @@ public class ViewFactory {
         return accountsView;
     }
 
-    public void showLoginWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
-        createStage(loader);
-    }
-
     public void showClientWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Client.fxml"));
         ClientController clientController = new ClientController();
         loader.setController(clientController);
          createStage(loader);
+    }
+
+
+    /*-------------------admin section-------------------------*/
+
+    public ObjectProperty<AdminMenuOptions> getAdminSelectedMenuItem() {
+        return adminSelectedMenuItem;
+    }
+    public AnchorPane getCreateClientView() {
+        if(createClientView == null) {
+            try{
+                createClientView = new FXMLLoader(getClass().getResource("/Fxml/Admin/CreateClient.fxml")).load();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return createClientView;
+    }
+
+    public AnchorPane getClientsView() {
+        if(clientsView == null) {
+           try{
+               clientsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Clients.fxml")).load();
+           }catch (Exception e){
+               e.printStackTrace();
+           }
+        }
+        return clientsView;
+    }
+
+    public AnchorPane getDepositView() {
+        if(depositView == null) {
+            try{
+                depositView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Deposit.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return depositView;
+    }
+
+    public void showAdminWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Admin/Admin.fxml"));
+        AdminController controller = new AdminController();
+        loader.setController(controller);
+        createStage(loader);
+    }
+
+    public void showLoginWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
+        createStage(loader);
     }
 
     private void createStage(FXMLLoader loader) {
@@ -82,6 +145,8 @@ public class ViewFactory {
 
         Stage stage = new Stage();
         stage.setScene(scene);
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Images/diu.png"))));
+        stage.setResizable(false);
         stage.setTitle("DIU Bank");
         stage.show();
     }
