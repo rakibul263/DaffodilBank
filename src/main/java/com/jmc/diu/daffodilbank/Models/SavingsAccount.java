@@ -16,5 +16,8 @@ public class SavingsAccount extends Account {
         return withdrawalLimit;
     }
 
+    public String toString(){
+        return accountNumberProperty().get();
+    }
 
 }
