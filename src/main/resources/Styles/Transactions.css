@@ -2,11 +2,18 @@
     -fx-background-color: #e3e3e3;
 }
 
-.transactions_container Text{
-    -fx-text-fill: black;
-    -fx-font-size: 2.5em;
+.transactions_container Text {
+    -fx-text-fill: #006A67;
+    -fx-font-size: 3em;
     -fx-font-family: "Calibri Light";
+    -fx-font-weight: 700;
+    -fx-padding: 10;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 5, 0.3, 0, 2);
+    -fx-background-color: linear-gradient(to right, #006A67, #004F4C);
+    -fx-border-radius: 5;
 }
+
 
 .transactions_container list-view{
     -fx-background-color: #EEE;
